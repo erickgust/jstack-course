@@ -1,6 +1,7 @@
 const http = require('http')
-const routes = require('./routes')
 const { URL } = require('url')
+const routes = require('./routes')
+const bodyParser = require('./helpers/bodyParser')
 const PORT = 3333
 
 const server = http.createServer((request, response) => {
@@ -26,12 +27,17 @@ const server = http.createServer((request, response) => {
   if (route) {
     request.query = Object.fromEntries(parsedUrl.searchParams)
     request.params = { id }
+
     response.send = (statusCode, body) => {
       response.writeHead(statusCode, { 'Content-Type': 'application/json' })
       response.end(JSON.stringify(body))
     }
 
-    route.handler(request, response)
+    if (['POST', 'PUT', 'PATCH'].includes(request.method)) {
+      bodyParser(request, () => route.handler(request, response))
+    } else {
+      route.handler(request, response)
+    }
     return
   }
 
