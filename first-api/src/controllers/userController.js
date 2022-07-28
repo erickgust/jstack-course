@@ -23,5 +23,28 @@ module.exports = {
     if (user) { return response.send(200, user) }
 
     response.send(400, { error: 'User not found' })
+  },
+
+  createUser(request, response) {
+    let body = ''
+
+    request.on('data', (chunk) => {
+      body += chunk
+    })
+
+    request.on('end', () => {
+      body = JSON.parse(body)
+
+      const lastUserId = users.at(-1).id
+      const newUser = {
+        id: lastUserId + 1,
+        name: body.name,
+      }
+
+      users.push(newUser)
+
+      response.send(200, newUser)
+    })
+
   }
 }
