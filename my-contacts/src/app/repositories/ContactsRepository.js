@@ -1,22 +1,4 @@
-const { v4 } = require('uuid');
 const db = require('../../database');
-
-const contacts = [
-  {
-    id: v4(),
-    name: 'Erick',
-    email: 'erick@gmail.com',
-    phone: '999999999',
-    category_id: v4(),
-  },
-  {
-    id: v4(),
-    name: 'Mateus',
-    email: 'mateus@mail.com',
-    phone: '888888888',
-    category_id: v4(),
-  },
-];
 
 class ContactsRepository {
   async findAll(orderBy) {
