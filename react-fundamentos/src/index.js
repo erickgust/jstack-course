@@ -1,14 +1,15 @@
 import React from 'react'
-import {createRoot} from 'react-dom'
+import { createRoot } from 'react-dom'
+import { App } from './app'
 
-const app = document.querySelector('[data-js="app"]')
+const rootElement = document.querySelector('[data-js="root"]')
 
-if (!app) {
+if (!rootElement) {
   throw new Error('Element not found')
 }
 
-const root = createRoot(app)
+const root = createRoot(rootElement)
 
 root.render(
-  <h1>App</h1>
+  <App />
 )
