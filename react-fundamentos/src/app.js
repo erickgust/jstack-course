@@ -1,4 +1,5 @@
 import React from 'react'
+import { Header } from './header'
 import { Post } from './post'
 
 const posts = [
@@ -19,8 +20,9 @@ const posts = [
 export function App() {
   return (
     <>
-      <h1>JStack's Blog</h1>
-      <h1>Posts da semana</h1>
+      <Header title="JStack's Blog">
+        <h2>Posts da semana</h2>
+      </Header>
 
       <hr />
 
