@@ -27,7 +27,7 @@ export function App() {
       <hr />
 
       {posts.map((post, index) =>(
-        <Post {...post} key={index} />
+        <Post likes={index*10} {...post} key={index} />
       ))}
     </>
   )
