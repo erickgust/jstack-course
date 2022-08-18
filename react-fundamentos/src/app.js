@@ -20,7 +20,7 @@ const posts = [
 export function App() {
   return (
     <>
-      <Header title="JStack's Blog">
+      <Header>
         <h2>Posts da semana</h2>
       </Header>
 
