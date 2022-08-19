@@ -5,9 +5,9 @@ export function Post(props) {
   return (
     <>
       <article>
-        <strong>{props.title}</strong>
+        <strong>{props.post.title}</strong>
         <br />
-        <small>{props.subtitle}</small>
+        <small>{props.post.subtitle}</small>
         <br />
         Media: {props.likes / 2}
       </article>
