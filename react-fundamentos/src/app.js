@@ -8,21 +8,25 @@ export function App() {
       title: 'Título da notícia 1',
       subtitle: 'Subtítulo da notícia 1',
       likes: 20,
-      id: 1,
+      id: Math.random(),
     },
     {
       title: 'Título da notícia 2',
       subtitle: 'Subtítulo da notícia 2',
       likes: 60,
-      id: 2,
+      id: Math.random(),
     },
     {
       title: 'Título da notícia 3',
       subtitle: 'Subtítulo da notícia 3',
       likes: 40,
-      id: 3,
+      id: Math.random(),
     },
   ])
+
+  function handleRemovePost(postId) {
+    setPosts((posts) => posts.filter(post => post.id !== postId))
+  }
 
   function handleRefresh() {
     setPosts((state) => ([
@@ -31,7 +35,7 @@ export function App() {
         title: `Título da notícia ${state.length + 1}`,
         subtitle: `Subtítulo da notícia ${state.length + 1}`,
         likes: 40,
-        id: state.length + 1,
+        id: Math.random(),
       },
     ]))
   }
@@ -51,9 +55,11 @@ export function App() {
         <Post
           key={post.id}
           likes={post.likes}
+          onRemove={handleRemovePost}
           post={{
             title: post.title,
-            subtitle: post.subtitle
+            subtitle: post.subtitle,
+            id: post.id
           }}
         />
       ))}
