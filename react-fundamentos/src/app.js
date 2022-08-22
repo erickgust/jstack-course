@@ -8,18 +8,21 @@ export function App() {
       title: 'Título da notícia 1',
       subtitle: 'Subtítulo da notícia 1',
       likes: 20,
+      read: false,
       id: Math.random(),
     },
     {
       title: 'Título da notícia 2',
       subtitle: 'Subtítulo da notícia 2',
       likes: 60,
+      read: false,
       id: Math.random(),
     },
     {
       title: 'Título da notícia 3',
       subtitle: 'Subtítulo da notícia 3',
       likes: 40,
+      read: true,
       id: Math.random(),
     },
   ])
@@ -54,13 +57,8 @@ export function App() {
       {posts.map(post =>(
         <Post
           key={post.id}
-          likes={post.likes}
           onRemove={handleRemovePost}
-          post={{
-            title: post.title,
-            subtitle: post.subtitle,
-            id: post.id
-          }}
+          post={post}
         />
       ))}
     </>
