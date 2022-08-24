@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { ThemeProvider } from './contexts/theme'
 import { Header } from './header'
 import { Post } from './post'
 
@@ -39,12 +40,13 @@ export function App() {
         subtitle: `Subtítulo da notícia ${state.length + 1}`,
         likes: 40,
         id: Math.random(),
+        read: false,
       },
     ]))
   }
 
   return (
-    <>
+    <ThemeProvider>
       <Header>
         <h2>
           Posts da semana
@@ -61,6 +63,6 @@ export function App() {
           post={post}
         />
       ))}
-    </>
+    </ThemeProvider>
   )
 }
