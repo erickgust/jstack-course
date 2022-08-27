@@ -7,11 +7,7 @@ export function Header({ title, children }) {
   const { onToggleTheme } = useContext(ThemeContext)
 
   return (
-    <div style={{
-      backgroundColor: '#eee',
-      fontFamily: 'sans-serif',
-      marginBottom: '1rem'
-    }}>
+    <div>
       <h1>{title}</h1>
       <Button onClick={onToggleTheme}>Theme</Button>
       {children}
