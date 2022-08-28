@@ -3,7 +3,7 @@ import { ThemeProvider } from './contexts/theme'
 import { Header } from './header'
 import { Post } from './post'
 
-import styles from './app.css'
+import styles from './app.scss'
 
 export function App() {
   const [posts, setPosts] = useState([
