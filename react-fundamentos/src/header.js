@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 import { Button } from './button'
 import { ThemeContext } from './contexts/theme'
 
+import styles from './header.css'
+
 export function Header({ title, children }) {
   const { onToggleTheme } = useContext(ThemeContext)
 
   return (
     <div>
-      <h1>{title}</h1>
+      <h1 className={styles.title}>{title}</h1>
       <Button onClick={onToggleTheme}>Theme</Button>
       {children}
     </div>

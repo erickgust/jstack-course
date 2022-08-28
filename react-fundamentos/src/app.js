@@ -3,6 +3,8 @@ import { ThemeProvider } from './contexts/theme'
 import { Header } from './header'
 import { Post } from './post'
 
+import styles from './app.css'
+
 export function App() {
   const [posts, setPosts] = useState([
     {
@@ -48,7 +50,7 @@ export function App() {
   return (
     <ThemeProvider>
       <Header>
-        <h2>
+        <h2 className={styles.title}>
           Posts da semana
           <button onClick={handleRefresh}>Atualizar</button>  
         </h2>
