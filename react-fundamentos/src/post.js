@@ -2,27 +2,30 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { PostHeader } from './post-header'
 
+import styles from './post.scss'
+
 export function Post({ post, onRemove }) {
   return (
-    <>
-      <article>
-        <PostHeader
-          onRemove={onRemove}
-          post={{
-            id: post.id,
-            title: post.title,
-            read: post.read
-          }}
-        />
+    <article className={
+      post.removed
+        ? styles.postRemoved
+        : styles.post
+    }>
+      <PostHeader
+        onRemove={onRemove}
+        post={{
+          id: post.id,
+          title: post.title,
+          read: post.read
+        }}
+      />
 
-        <br />
-
-        <small>{post.subtitle}</small>
-        <br />
-        Media: {post.likes / 2}
-      </article>
       <br />
-    </>
+
+      <small>{post.subtitle}</small>
+      <br />
+      Media: {post.likes / 2}
+    </article>
   )
 }
 

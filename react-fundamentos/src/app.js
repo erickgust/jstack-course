@@ -13,6 +13,7 @@ export function App() {
       likes: 20,
       read: false,
       id: Math.random(),
+      removed: true,
     },
     {
       title: 'Título da notícia 2',
@@ -20,6 +21,7 @@ export function App() {
       likes: 60,
       read: false,
       id: Math.random(),
+      removed: false,
     },
     {
       title: 'Título da notícia 3',
@@ -27,11 +29,18 @@ export function App() {
       likes: 40,
       read: true,
       id: Math.random(),
+      removed: false,
     },
   ])
 
   function handleRemovePost(postId) {
-    setPosts((posts) => posts.filter(post => post.id !== postId))
+    setPosts((posts) => posts.map(
+      (post) => (
+        post.id === postId
+          ? {...post, removed: true}
+          : post
+      )
+    ))
   }
 
   function handleRefresh() {
