@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: #222;
     color: #EEE;
+    font-family: sans-serif;
   }
 `
 
