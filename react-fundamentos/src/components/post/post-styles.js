@@ -1,10 +1,11 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.article`
+export const Container = styled.article`${({ removed }) => css`
   margin-bottom: 1.5rem;
 
-  opacity: ${({ removed }) => removed ? 0.7 : 1};
-`
+  opacity: ${removed ? 0.7 : 1};
+  color: ${removed ? '#DC143C' : '#FFF'};
+`}`
 
 export const Subtitle = styled.small`
   display: block;
