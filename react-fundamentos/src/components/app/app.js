@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { ThemeProvider } from '../../contexts/theme'
 import { Header } from '../header'
 import { Post } from '../post'
-
-import styles from './app.scss'
+import { Title } from './app-styles'
 
 export function App() {
   const [posts, setPosts] = useState([
@@ -59,10 +58,10 @@ export function App() {
   return (
     <ThemeProvider>
       <Header>
-        <h2 className={styles.title}>
+        <Title as='h2'>
           Posts da semana
           <button onClick={handleRefresh}>Atualizar</button>  
-        </h2>
+        </Title>
       </Header>
 
       <hr />
