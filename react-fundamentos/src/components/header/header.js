@@ -1,26 +1,13 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import { Button } from '../button'
-import { ThemeContext } from '../../contexts/theme'
-import { Title } from '../title'
+import React from 'react'
+import { Container } from './header-styles'
 
-export function Header ({ title, children }) {
-  const { onToggleTheme } = useContext(ThemeContext)
-
+function Header () {
   return (
-    <div>
-      <Title>{title}</Title>
-      <Button onClick={onToggleTheme}>Theme</Button>
-      {children}
-    </div>
+    <Container>
+      <h1>JStack's Blog</h1>
+      <button type="button">🌞</button>
+    </Container>
   )
 }
 
-Header.defaultProps = {
-  title: 'JStack\'s blog'
-}
-
-Header.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node
-}
+export { Header }

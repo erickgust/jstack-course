@@ -1,20 +1,15 @@
 import React from 'react'
-import { createGlobalStyle } from 'styled-components'
-import { App } from './components/app'
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: #222;
-    color: #EEE;
-    font-family: sans-serif;
-  }
-`
+import { GlobalStyle } from './styles/global'
+import { Layout } from './components/layout'
 
-export function Root () {
+function Root () {
   return (
     <>
       <GlobalStyle />
-      <App />
+      <Layout />
     </>
   )
-}
+};
+
+export { Root }
