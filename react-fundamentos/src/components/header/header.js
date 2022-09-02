@@ -4,7 +4,7 @@ import { Button } from '../button'
 import { ThemeContext } from '../../contexts/theme'
 import { Title } from '../title'
 
-export function Header({ title, children }) {
+export function Header ({ title, children }) {
   const { onToggleTheme } = useContext(ThemeContext)
 
   return (
@@ -22,5 +22,5 @@ Header.defaultProps = {
 
 Header.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.node,
+  children: PropTypes.node
 }

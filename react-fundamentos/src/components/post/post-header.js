@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from '../button'
 
-export function PostHeader({ post, onRemove }) {
+export function PostHeader ({ post, onRemove }) {
   return (
     <>
       <strong>
@@ -19,6 +19,6 @@ PostHeader.propTypes = {
   post: PropTypes.shape({
     title: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
-    read: PropTypes.bool.isRequired,
+    read: PropTypes.bool.isRequired
   })
 }

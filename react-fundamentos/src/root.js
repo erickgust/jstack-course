@@ -1,6 +1,6 @@
 import React from 'react'
-import { createGlobalStyle } from "styled-components";
-import { App } from "./components/app";
+import { createGlobalStyle } from 'styled-components'
+import { App } from './components/app'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export function Root() {
+export function Root () {
   return (
     <>
       <GlobalStyle />

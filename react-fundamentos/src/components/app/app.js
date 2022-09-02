@@ -4,7 +4,7 @@ import { Header } from '../header'
 import { Post } from '../post'
 import { Title } from './app-styles'
 
-export function App() {
+export function App () {
   const [posts, setPosts] = useState([
     {
       title: 'Título da notícia 1',
@@ -12,7 +12,7 @@ export function App() {
       likes: 20,
       read: false,
       id: Math.random(),
-      removed: true,
+      removed: true
     },
     {
       title: 'Título da notícia 2',
@@ -20,7 +20,7 @@ export function App() {
       likes: 60,
       read: false,
       id: Math.random(),
-      removed: false,
+      removed: false
     },
     {
       title: 'Título da notícia 3',
@@ -28,21 +28,21 @@ export function App() {
       likes: 40,
       read: true,
       id: Math.random(),
-      removed: false,
-    },
+      removed: false
+    }
   ])
 
-  function handleRemovePost(postId) {
+  function handleRemovePost (postId) {
     setPosts((posts) => posts.map(
       (post) => (
         post.id === postId
-          ? {...post, removed: true}
+          ? { ...post, removed: true }
           : post
       )
     ))
   }
 
-  function handleRefresh() {
+  function handleRefresh () {
     setPosts((state) => ([
       ...state,
       {
@@ -50,8 +50,8 @@ export function App() {
         subtitle: `Subtítulo da notícia ${state.length + 1}`,
         likes: 40,
         id: Math.random(),
-        read: false,
-      },
+        read: false
+      }
     ]))
   }
 
@@ -60,13 +60,13 @@ export function App() {
       <Header>
         <Title as='h2'>
           Posts da semana
-          <button onClick={handleRefresh}>Atualizar</button>  
+          <button onClick={handleRefresh}>Atualizar</button>
         </Title>
       </Header>
 
       <hr />
 
-      {posts.map(post =>(
+      {posts.map(post => (
         <Post
           key={post.id}
           onRemove={handleRemovePost}

@@ -3,7 +3,7 @@ import React from 'react'
 import { PostHeader } from './post-header'
 import { Container, Rate, Subtitle } from './post-styles'
 
-export function Post({ post, onRemove }) {
+export function Post ({ post, onRemove }) {
   return (
     <Container removed={post.removed}>
       <PostHeader
@@ -29,5 +29,6 @@ Post.propTypes = {
     subtitle: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     read: PropTypes.bool.isRequired,
+    removed: PropTypes.bool.isRequired
   })
 }
