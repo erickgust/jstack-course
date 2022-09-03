@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import { ToggleThemeContext } from '../../root'
+import React from 'react'
+import { useToggleTheme } from '../../hooks/useToggleTheme'
 import { Container } from './footer-styles'
 
 function Footer () {
-  const { theme, handleToggleTheme } = useContext(ToggleThemeContext)
+  const { theme, handleToggleTheme } = useToggleTheme()
 
   return (
     <Container>
