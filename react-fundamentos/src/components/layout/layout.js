@@ -4,10 +4,10 @@ import { Header } from '../header'
 import { PostsList } from '../posts-list'
 import { Footer } from '../footer'
 
-function Layout ({ onToggleTheme, theme }) {
+function Layout () {
   return (
     <>
-      <Header onToggleTheme={onToggleTheme} theme={theme} />
+      <Header />
       <PostsList />
       <Footer />
     </>

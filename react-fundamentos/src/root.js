@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { createContext, useMemo, useState } from 'react'
 
 import { GlobalStyle } from './styles/global'
 import { Layout } from './components/layout'
@@ -6,7 +6,9 @@ import { ThemeProvider } from 'styled-components'
 
 import themes from './styles/themes'
 
-function Root () {
+export const ToggleThemeContext = createContext(null)
+
+function ToggleThemeProvider ({ children }) {
   const [theme, setTheme] = useState('dark')
 
   const currentTheme = useMemo(() => {
@@ -18,10 +20,20 @@ function Root () {
   }
 
   return (
-    <ThemeProvider theme={currentTheme}>
+    <ToggleThemeContext.Provider value={{ theme, handleToggleTheme }}>
+      <ThemeProvider theme={currentTheme}>
+        {children}
+      </ThemeProvider>
+    </ToggleThemeContext.Provider>
+  )
+}
+
+function Root () {
+  return (
+    <ToggleThemeProvider>
       <GlobalStyle />
-      <Layout onToggleTheme={handleToggleTheme} theme={theme} />
-    </ThemeProvider>
+      <Layout />
+    </ToggleThemeProvider>
   )
 };
 
