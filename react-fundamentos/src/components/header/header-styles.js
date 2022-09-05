@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.header`
+export const Container = styled.header`${({ theme }) => css`
   background: ${({ theme }) => theme.backgroundLayer1};
   height: 100px;
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  border-radius: 10px;
+  padding: 0 ${theme.spacing.large + 'px'};
+  border-radius: ${theme.borderRadius};
   justify-content: space-between;
 
   button {
@@ -16,4 +16,4 @@ export const Container = styled.header`
     background: transparent;
     border: none;
   }
-`
+`}`

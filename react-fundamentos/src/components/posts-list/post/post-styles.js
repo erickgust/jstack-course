@@ -1,14 +1,15 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.article`
+export const Container = styled.article`${({ theme }) => css`
   background: ${({ theme }) => theme.postBackgroundColor};
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  border-radius: 10px;
+  padding: ${theme.spacing.medium + 'px'};
+  border-radius: ${theme.borderRadius};
 
   h2 {
-    margin: 0 0 8px;
+    margin: 0;
+    margin-bottom: ${theme.spacing.small + 'px'};
   }
 
   small {
@@ -16,6 +17,6 @@ export const Container = styled.article`
   }
 
   & + article {
-    margin-top: 8px;
+    margin-top: ${theme.spacing.small + 'px'};
   }
-`
+`}`
