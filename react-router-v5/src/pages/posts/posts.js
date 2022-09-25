@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Container } from './list-styles'
+import { Container } from './posts-styles'
 import { Post } from './post'
 
-import posts from './posts'
+import posts from './data'
 
-function PostsList () {
+function Posts() {
   return (
     <Container>
       {posts.map((post) => (
@@ -19,4 +19,4 @@ function PostsList () {
   )
 }
 
-export { PostsList }
+export { Posts }
