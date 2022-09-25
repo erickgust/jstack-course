@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { Header } from '../header'
-import { PostsList } from '../posts-list'
 import { Footer } from '../footer'
+import { Routes } from '../../routes'
 
-function Layout () {
+function Layout() {
   return (
     <>
       <Header />
-      <PostsList />
+      <Routes />
       <Footer />
     </>
   )
