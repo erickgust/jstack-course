@@ -13,6 +13,7 @@ function Layout() {
       <Nav>
         <Link to='/'>Home</Link>
         <Link to='/posts'>Posts</Link>
+        <Link to='/post/23'>Post</Link>
       </Nav>
       <Routes />
       <Footer />
