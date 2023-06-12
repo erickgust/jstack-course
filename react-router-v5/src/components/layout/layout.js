@@ -16,7 +16,7 @@ function Layout() {
         <Link to='/post/23'>Post</Link>
       </Nav>
       <Routes />
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   )
 }
